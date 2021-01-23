@@ -1,4 +1,3 @@
-# a1ex-13.github.io
 <!DOCTYPE html>
 <head>
 <div class="wrapper">
@@ -9,10 +8,10 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-      </header>
-    </div>
-  </body>
-  </head>
-</html>
+            <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+          </header>
+        </div>
+      </body>
+      </head>
+      </html>
      
