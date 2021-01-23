@@ -1,7 +1,7 @@
 <head>
 <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">Prisoner of the Caucasus.</a></h1>
+        <h1><a href="https://en.wikipedia.org/wiki/Alexander_Pushkin">Prisoner of the Caucasus.</a></h1>
         <img src="a1ex-13.github.io/m4.jpg" alt="Logo" />
       </header>
       </div>
