@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
 <div class="wrapper">
       <header>
@@ -8,7 +7,10 @@
   <body>
     <div class="wrapper">
       <header>
-            <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+            <h2><a href="{{ "/" | absolute_url }}">"It seemed like a hopeless prisoner
+<br>He was getting used to the dull life. 
+<br>The longing of freedom, the rebellious heat, 
+<br>He hid deeply in his soul..."</a></h1>
           </header>
         </div>
       </body>
