@@ -18,8 +18,8 @@ Experimentation gas handling unit (Recirculated or Outside):
 – Controls;
 
 > ### Contraindication:
-> – theory not proven, this assumption; 
-> – is a specific situation in which a **MEN-dl-AY**, should not be used because it may be harmful to the person. 
+> `[theory not proven, this assumption]`; 
+> is a specific situation in which a **MEN-dl-AY**, should not be used because it may be harmful to the person. 
 > For example, "✨-component" used to reaction is absolutely contraindicated;
 
 ### can be schematically represented by the set of following reactions ["H2"](https://en.wikipedia.org/wiki/Hydrogen) and ["CO2"](https://en.wikipedia.org/wiki/Sabatier_reaction):
