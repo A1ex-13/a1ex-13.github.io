@@ -7,9 +7,9 @@ The longing of freedom, the rebellious heat,
 He hid deeply in his soul...
 ```
 
-[🧔 about me](https://github.com/A1ex-13/README.md)
+[🧔 about me](https://github.com/A1ex-13)
 
-[🐍 this is my Caesar_Cipher code on Python](https://github.com/A1ex-13/Caesar_Cipher-/README.md)
+[🐍 this is my Caesar_Cipher code on Python](https://a1ex-13.github.io/Caesar_Cipher/Caesar_Cipher)
 
 [🌬️ project MEN-dl-AY](https://a1ex-13.github.io/MEN-dl-AY/MEN-dl-AY)
 
