@@ -6,7 +6,7 @@ He was getting used to the dull life.
 The longing of freedom, the rebellious heat, 
 He hid deeply in his soul...
 ```
-***[🧔 about me]***(https://github.com/A1ex-13/A1ex-13/edit/main/README.md)
+***[🧔 about me]*** (https://github.com/A1ex-13/A1ex-13)
 
 [🐍 this is my Caesar_Cipher code on Python](https://github.com/A1ex-13/Caesar_Cipher-)
 
