@@ -29,7 +29,7 @@ CO2 + H2 → CH4 + H2O
 ```
 **21.05.21** 
 
- [For more convincing, if you want you can also donate](https://paypal.me/mendlay)
+ [For more convincing, if you want you can also donate](https://a1ex-13.github.io/me/DOGE.jpg)
 
 
 
