@@ -13,6 +13,8 @@ He hid deeply in his soul...
 
 [🌬️ project MEN-dl-AY](https://a1ex-13.github.io/MEN-dl-AY/MEN-dl-AY)
 
+[🌾  KoloS](https://a1ex-13.github.io/kolos/KoloS)
+
 
 
 ###### [thanks ❤️ github](https://github.com/) [🎈 OpeneDoor 19.01.2021](https://img1.goodfon.ru/original/1956x1294/e/df/kreativ-gorod-smog-chelovek.jpg)  [🐕 so to donate me fun dog](https://a1ex-13.github.io/me/DOGE.jpg)
