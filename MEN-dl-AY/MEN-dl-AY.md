@@ -27,6 +27,8 @@
 Fe + H2O → FeO + H2
 CO2 + H2 → CH4 + H2O
 ```
+[🚪 home](https://a1ex-13.github.io)
+
 **21.05.21** 
 
  [For more convincing, if you want you can also donate fun dog](https://a1ex-13.github.io/me/DOGE.jpg)
