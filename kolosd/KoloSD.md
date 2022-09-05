@@ -2,7 +2,7 @@
   <img src="https://a1ex-13.github.io/kolos/de.png" width="200"/>
 </div>
 
-# KoloS-Detector
+# [KoloS-Detector. click me ](https://github.com/A1ex-13/KoloS-Detector)
 
 Have you ever wondered whether or not an image had grass in it?
 I will be using Flask to create this application.
