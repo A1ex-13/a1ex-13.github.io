@@ -29,4 +29,6 @@
 
 🚪 [home](https://a1ex-13.github.io)
 
+<script async src="https://telegram.org/js/telegram-widget.js?19" data-telegram-post="k0j0s/3" data-width="100%"></script>
+
 ######  9.05.2022   [🐕 donate](https://a1ex-13.github.io/me/DOGE.jpg)
