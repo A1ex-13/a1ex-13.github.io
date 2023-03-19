@@ -1,6 +1,6 @@
 ["Poor ventilation is one of the main causes of excessive [CO2] concentrations."](https://en.wikipedia.org/wiki/Carbon_dioxide) 
 
-[![air](https://www.iqair.com/assets/img/earth_horizontal_small.webp)](https://www.iqair.com/air-quality-map)
+[![air-quality](https://www.iqair.com/assets/img/earth_horizontal_small.webp)](https://www.iqair.com/air-quality-map)
 
 #  MEN-dl-AY 
 ## Modifical gas handling unit is a device regulate [CO2] and circulate gas as part of a installation system.
