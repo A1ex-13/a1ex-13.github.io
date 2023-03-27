@@ -31,9 +31,12 @@
 
 [![ph-quality](http://web.archive.org/web/20220207081040im_/https://www.ng.ru/upload/medialibrary/601/1-14-5480.jpg)](http://web.archive.org/web/20220207123843/https://www.ng.ru/nauka/2022-01-25/14_8354_25012022.html)
 
-[🚪 home](https://a1ex-13.github.io)
+[◀️ telegram chat](https://t.me/+5s8W-8eWEolyZjYy)
+
+|[🚪 home](https://a1ex-13.github.io)
 
 **27.03.23**  => 53 | 35
+
 
  [For more convincing, if you want you can also donate fun dog](https://a1ex-13.github.io/me/DOGE.jpg)
 
