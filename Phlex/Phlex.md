@@ -23,13 +23,13 @@
 > is a specific situation in which a **Phlex**, should not be used because it may be harmful to the person. 
 > For example, "✨-component" used to reaction is absolutely contraindicated;
 
-### To prevent further deterioration of ["Lake Baikal’s"](https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D0%BA%D0%B0%D0%BB#%D0%A0%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D1%8B_%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B5%D0%BD%D0%B8%D0%B9) water quality, it is urgent to monitor the coastal zone, identify the sources of nutrient inputs, and develop measures to reduce them :
+### To prevent further deterioration of water quality, it is urgent to monitor the coastal zone, identify the sources of nutrient inputs, and develop measures to reduce them :
 ```
  The task is to detect whether all the elements are mixed or not and to separate them if necessary.
 ```
 ["Eutrophication - is a process of excessive nutrient enrichment of water bodies that leads to algal blooms, oxygen depletion, and loss of biodiversity."](https://en.wikipedia.org/wiki/Eutrophication)
 
-[![ph1ex-quality](http://a1ex-13.github.io/Phlex/combine.jpg)](http://web.archive.org/web/20220207123843/https://www.ng.ru/nauka/2022-01-25/14_8354_25012022.html)
+[![ph1ex-quality](http://a1ex-13.github.io/Phlex/combine.jpg)]
 
 [◀️ telegram chat](https://t.me/ph1ex)
 
