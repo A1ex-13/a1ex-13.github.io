@@ -31,7 +31,7 @@
 
 [![ph-quality](http://web.archive.org/web/20220207081040im_/https://www.ng.ru/upload/medialibrary/601/1-14-5480.jpg)](http://web.archive.org/web/20220207123843/https://www.ng.ru/nauka/2022-01-25/14_8354_25012022.html)
 
-[◀️ telegram chat](https://t.me/+3K-ojbq_deZhZGUy)
+[◀️ telegram chat](https://t.me/ph1ex)
 
 |[🚪 home](https://a1ex-13.github.io)
 
