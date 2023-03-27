@@ -29,6 +29,6 @@
 
 🚪 [home](https://a1ex-13.github.io)
 
-[◀️ telegram chat](https://t.me/k0j0s)
+[◀️ telegram chat](https://t.me/k_oio_s)
 
 ######  9.05.2022   [🐕 donate](https://a1ex-13.github.io/me/DOGE.jpg)
