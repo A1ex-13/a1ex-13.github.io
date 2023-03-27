@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="https://a1ex-13.github.io/Phlex/phl.jpg" width="200"/>
+  <img src="https://a1ex-13.github.io/Phlex/phl.png" width="200"/>
 </div>
 
 #  Phlex 
