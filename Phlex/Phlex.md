@@ -29,7 +29,7 @@
 ```
 ["Eutrophication - is a process of excessive nutrient enrichment of water bodies that leads to algal blooms, oxygen depletion, and loss of biodiversity."](https://en.wikipedia.org/wiki/Eutrophication)
 
-[![ph-quality](http://web.archive.org/web/20220207081040im_/https://www.ng.ru/upload/medialibrary/601/1-14-5480.jpg)](http://web.archive.org/web/20220207123843/https://www.ng.ru/nauka/2022-01-25/14_8354_25012022.html)
+[![ph1ex-quality](http://a1ex-13.github.io/Phlex/combine.jpg)](http://web.archive.org/web/20220207123843/https://www.ng.ru/nauka/2022-01-25/14_8354_25012022.html)
 
 [◀️ telegram chat](https://t.me/ph1ex)
 
