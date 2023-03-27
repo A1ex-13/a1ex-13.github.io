@@ -3,8 +3,8 @@
 </div>
 
 #  Phlex 
-## A modified water handling unit is a device that regulates the concentration of phosphate ions [PO4] and circulates water as part of an installation system.
 
+## A modified water handling unit is a device that regulates the concentration of phosphate ions [PO4] and circulates water as part of an installation system.
 
 ### Components:
 
