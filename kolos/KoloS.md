@@ -24,7 +24,7 @@
 #### 🔗 Hack it Back. click image
 
 <div id="header" align="left">
-  <p><a href="https://prize.supplyframe.com/" target="Hack it Back"><img src="https://prize.supplyframe.com/img-prize/2022/challenge-3.png" width="100"></a></p>
+  <p><a href="https://hackaday.io/project/185301-kolos/" target="Hack it Back"><img src="https://prize.supplyframe.com/img-prize/2022/challenge-3.png" width="100"></a></p>
 </div>
 
 🚪 [home](https://a1ex-13.github.io)
