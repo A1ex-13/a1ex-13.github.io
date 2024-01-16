@@ -11,22 +11,7 @@
         opacity: 1;
       }
     }
-
-    .animated-slogan {
-      animation: fadeIn 2s ease-in-out; 
-    }
-
-    .animated-reverse {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .animated-reverse::before {
-      content: attr(data-text);
-      display: inline-block;
-    }
-
+    
     @keyframes reverseText {
       from {
         width: 100%;
@@ -36,20 +21,30 @@
       }
     }
 
-    .animated-reverse::before {
-      overflow: hidden;
-      display: inline-block;
-      white-space: nowrap;
-      animation: reverseText 1.5s ease-in-out;
+    .animated-slogan {
+      animation: fadeIn 2s ease-in-out; 
     }
 
     .animated {
       animation: fadeIn 1.5s ease-in-out;
     }
+
+    .animated-reverse::before {
+      content: attr(data-text);
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      animation: reverseText 1.5s ease-in-out infinite;
+    }
   </style>
   <title>KrenSens</title>
 </head>
-  <body><div class="animated-reverse" align="center" data-text="Preserve what has already been created to modernize it into something new in the future"></div></body>
+  <body>
+    <div class="animated-reverse" align="center" data-text="Preserve what">
+      <div class="animated-reverse" align="center" data-text="has already been created">
+        <div class="animated-reverse" align="center" data-text="to modernize it into something new in the future">
+    </div>
+  </body>
 <body>
   
   <div id="header" align="center" class="animated">
