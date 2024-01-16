@@ -47,7 +47,8 @@
       }
     }
   
-    .animated-reverse::before {
+    .animated-rotate::before {
+      content: attr(data-text);
       overflow: hidden;
       display: inline-block;
       white-space: nowrap;
@@ -121,7 +122,7 @@
   <p>16.01.24</p>
 
   <p>Copyright by A1ex-13</p>
-  <p class="rotateText" data-texT="🌍"></p>
+  <p class="rotateText" data-text="🌍"></p>
   
   <script>
     // Optionally, you can use JavaScript to add the animated-reverse class dynamically.
