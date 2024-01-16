@@ -12,12 +12,9 @@
         opacity: 1;
       }
     }
-    .animated-slogan: {
-      animation: fadeIn 2s ease-in-out; 
-    }
 
-    .animated: {
-      animation: fadeIn 1.5s ease-in-out;
+    .animated-slogan {
+      animation: fadeIn 2s ease-in-out infinite; 
     }
 
     
@@ -37,6 +34,10 @@
       white-space: nowrap;
       animation: reverseText 2s ease-in-out infinite;
     }
+
+    .animated {
+      animation: fadeIn 1.5s ease-in-out  infinite;
+    }
   </style>
   <title>KrenSens</title>
 </head>
@@ -48,7 +49,7 @@
   </body>
 <body>
   
-  <div id="header" align="center" class="animated">
+  <div id="header" align="center" class="animated-reverse">
     <img src="https://a1ex-13.github.io/KrenSens/KrenSens.png" width="200"/>
   </div>
   
