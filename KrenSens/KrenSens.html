@@ -32,12 +32,29 @@
       overflow: hidden;
       display: inline-block;
       white-space: nowrap;
-      animation: reverseText 2s ease-in-out infinite;
+      animation: reverseText 4s ease-in-out infinite;
     }
 
     .animated {
       animation: fadeIn 1.5s ease-in-out  infinite;
     }
+    
+      @keyframes rotateText {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animated-reverse::before {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    animation: rotateText 2s linear infinite;
+  }
+
   </style>
   <title>KrenSens</title>
 </head>
@@ -49,11 +66,11 @@
   </body>
 <body>
   
-  <div id="header" align="center" class="animated-reverse">
+  <div id="header" align="center" >
     <img src="https://a1ex-13.github.io/KrenSens/KrenSens.png" width="200"/>
   </div>
   
-  <nav class="animated-slogan">
+  <nav>
     <ul>
       <li><a href="#construction">Construction of structures</a></li>
       <li><a href="#hydraulic">Hydraulic Structures Monitoring</a></li>
@@ -105,7 +122,7 @@
   <p>16.01.24</p>
 
   <p>Copyright by A1ex-13</p>
-  <p class="animated">🌍</p>
+  <p class="rotateText">🌍</p>
   
   <script>
     // Optionally, you can use JavaScript to add the animated-reverse class dynamically.
