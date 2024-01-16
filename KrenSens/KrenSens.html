@@ -3,7 +3,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    
     @keyframes fadeIn {
       0% {
         opacity: 0;
@@ -12,40 +11,51 @@
         opacity: 1;
       }
     }
-    
-    @keyframes reverseText {
-      from {
-        content: "";
-      }
-      to {
-        content: attr(data-text);
-      }
-    }
-    
-    .animated {
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    
+
     .animated-slogan {
-      animation: fadeIn 2s ease-in-out;
+      animation: fadeIn 2s ease-in-out; 
     }
-    
+
+    .animated-reverse {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
     .animated-reverse::before {
-      animation: reverseText 3s ease-in-out;
       content: attr(data-text);
       display: inline-block;
+    }
+
+    @keyframes reverseText {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0;
+      }
+    }
+
+    .animated-reverse::before {
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      animation: reverseText 1.5s ease-in-out;
+    }
+
+    .animated {
+      animation: fadeIn 1.5s ease-in-out;
     }
   </style>
   <title>KrenSens</title>
 </head>
+  <body><div class="animated-reverse" align="center" data-text="Preserve what has already been created to modernize it into something new in the future"></div></body>
 <body>
   
   <div id="header" align="center" class="animated">
     <img src="https://a1ex-13.github.io/KrenSens/KrenSens.png" width="200"/>
   </div>
   
-  <div class="animated-reverse" align="center" data-text="Preserve what has already been created to modernize it into something new in the future"></div>
- 
   <nav class="animated-slogan">
     <ul>
       <li><a href="#construction">Construction of structures</a></li>
@@ -95,7 +105,7 @@
     <p><a href="https://a1ex-13.github.io">🚪 home</a></p>
   </footer>
 
-  <p>**16.01.24**</p>
+  <p>16.01.24</p>
 
   <p>Copyright by A1ex-13</p>
   <p class="animated">🌍</p>
