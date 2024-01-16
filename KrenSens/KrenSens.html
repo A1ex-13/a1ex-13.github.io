@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes reverseText {
+      from {
+        content: "";
+      }
+      to {
+        content: attr(data-text);
+      }
+    }
+    
+    .animated {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    .animated-slogan {
+      animation: fadeIn 2s ease-in-out;
+    }
+    
+    .animated-reverse::before {
+      animation: reverseText 1.5s ease-in-out;
+      content: attr(data-text);
+      display: inline-block;
+    }
+  </style>
+  <title>KrenSens</title>
+</head>
+<body>
+  <div id="header" align="center" class="animated">
+    <img src="https://a1ex-13.github.io/KrenSens/KrenSens.png" width="200"/>
+  </div>
+  <div class="animated-reverse" data-text="Preserve what has already been created to modernize it into something new in the future"></div>
+ 
+  <nav class="animated-slogan">
+    <ul>
+      <li><a href="#construction">Construction of structures</a></li>
+      <li><a href="#hydraulic">Hydraulic Structures Monitoring</a></li>
+      <li><a href="#engineering">Engineering Constructions</a></li>
+      <li><a href="#workshops">Industrial Workshops</a></li>
+      <li><a href="#monitoring">Equipment Monitoring</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <h1>KrenSens</h1>
+    <blockquote>
+      <p>The main idea of the sensor for measuring the inclination of structures is to provide accurate and reliable data on the tilt or inclination of an object or structure. The sensor is designed to provide real-time tilt information, which can be critically important for ensuring the stability and safety of various structures.</p>
+    </blockquote>
+
+    <h3 id="construction">Construction of structures:</h3>
+    <blockquote>
+    <p>KrenSens finds wide application in the construction of buildings and other structures. Sensors can be installed for continuous monitoring of the inclination of the structure in real-time, providing builders with important information about stability and safety.</p>
+    </blockquote>
+    
+    <h3 id="hydraulic">Hydraulic Structures Monitoring:</h3>
+    <blockquote>
+    <p>In the field of hydraulic structures, such as dams and reservoirs, KrenSens can be used to monitor the inclination of structures and warn of possible deformations. This allows for prompt responses to changes in conditions and ensures the reliability of hydraulic structures.</p>
+    </blockquote>
+    
+    <h3 id="engineering">Engineering Constructions:</h3>
+    <blockquote>
+    <p>In engineering construction projects, such as bridges and towers, KrenSens sensors provide crucial data on inclination, which is essential for maintaining stability and preventing potential damage.</p>
+    </blockquote>
+    
+    <h3 id="workshops">Industrial Workshops:</h3>
+    <blockquote>
+    <p>In industrial environments where precision and equipment stability are crucial, KrenSens can be used to monitor the inclination of industrial machines and equipment. This helps prevent emergencies and optimize manufacturing processes.</p>
+    </blockquote>
+
+    <h3 id="monitoring">Equipment Monitoring</h3>
+    <blockquote>
+    <p>In various fields where maintaining a specific angle of inclination for equipment is vital for efficient operation, KrenSens sensors offer a reliable tool for monitoring and promptly responding to any changes.</p>
+    </blockquote>
+
+    <p><em>The application of KrenSens in these areas provides a reliable instrument to ensure the safety, stability, and efficiency of various structures and equipment.</em></p>
+  </div>
+
+  <footer>
+    <p><a href="https://a1ex-13.github.io/me/1">🧔 about me</a></p>
+    <p><a href="https://a1ex-13.github.io">🚪 home</a></p>
+  </footer>
+
+  <p>**16.01.24**</p>
+
+  <p>Copyright by A1ex-13</p>
+  <p class="animated">🌍</p>
+  
+  <script>
+    // Optionally, you can use JavaScript to add the animated-reverse class dynamically.
+    document.addEventListener('DOMContentLoaded', function() {
+      const element = document.querySelector('.animated-reverse');
+      element.classList.add('animated-reverse');
+    });
+  </script>
+</body>
+</html>
