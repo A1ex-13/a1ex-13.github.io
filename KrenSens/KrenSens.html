@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    
     @keyframes fadeIn {
       0% {
         opacity: 0;
@@ -11,6 +12,14 @@
         opacity: 1;
       }
     }
+    .animated-slogan {
+      animation: fadeIn 2s ease-in-out; 
+    }
+
+    .animated {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
     
     @keyframes reverseText {
       from {
@@ -21,20 +30,12 @@
       }
     }
 
-    .animated-slogan {
-      animation: fadeIn 2s ease-in-out; 
-    }
-
-    .animated {
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
     .animated-reverse::before {
       content: attr(data-text);
       overflow: hidden;
       display: inline-block;
       white-space: nowrap;
-      animation: reverseText 1.5s ease-in-out infinite;
+      animation: reverseText 0.5s ease-in-out infinite;
     }
   </style>
   <title>KrenSens</title>
