@@ -1,6 +1,6 @@
    ![GitHub Logo](https://a1ex-13.github.io/m45.jpg.svg)
    
-   [❤️Become a sponsor to A1ex-13](https://github.com/sponsors/A1ex-13)
+   [❤️Become a sponsor to A1ex-13](https://a1ex-13.github.io/me/817D3C27-3D8B-4AD9-AC8E-561B3CCD3453.jpeg)
 ```
 "It seemed like a hopeless prisoner
 He was getting used to the dull life. 
@@ -26,5 +26,7 @@ He hid deeply in his soul...
 
 
 ###### [thanks ❤️ github](https://github.com/) [🎈 OpeneDoor 19.01.2021](https://img1.goodfon.ru/original/1956x1294/e/df/kreativ-gorod-smog-chelovek.jpg)  [🐕 so to donate me fun dog](https://a1ex-13.github.io/me/DOGE.jpg)
+
+
 
      
