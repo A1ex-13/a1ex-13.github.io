@@ -45,7 +45,7 @@ project_directory/
 │
 ├── .DS_Store                        # ?? File created by macOS to store metadata 
 ├── .gitignore                       # File specifying which files and folders to ignore in Git
-├── ai4eo_challenge_template.ipynb   # Competition notebook template
+├── phlex_v1_challenge_template.ipynb   # Competition notebook template
 ├── challenge_demo.ipynb             # Demonstration notebook
 └── environment.yml                  # File with project dependencies
 ```
