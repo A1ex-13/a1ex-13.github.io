@@ -9,11 +9,14 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             display: flex;
-            flex-direction: column; /* Изменено для вертикального размещения */
+            flex-direction: column; /* Вертикальное размещение */
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+        }
+        .logo {
+            margin-bottom: 20px; /* Отступ снизу для логотипа */
         }
         .calculator {
             background-color: #fff;
@@ -21,7 +24,7 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             width: 300px;
-            text-align: center; /* Добавлено для выравнивания текста */
+            text-align: center; /* Центрирование текста */
         }
         .calculator input {
             width: 100%;
@@ -47,15 +50,15 @@
             font-weight: bold;
         }
         footer {
-            margin-top: 20px; /* Добавлен отступ для отделения от калькулятора */
-            text-align: center; /* Центрирование ссылок */
+            margin-top: 20px; /* Отступ для футера */
+            text-align: center; /* Центрирование текста в футере */
         }
     </style>
 </head>
 <body>
     
-    <div id="header" align="center">
-        <img src="https://a1ex-13.github.io/RockeetBoost/rb.png" width="250"/>
+    <div class="logo">
+        <img src="https://a1ex-13.github.io/RockeetBoost/rb.png" width="250" alt="Rocket Boost Logo"/>
     </div>
     
     <div class="calculator">
@@ -81,7 +84,7 @@
     
     <script>
         function calculateThrust() {
-            // Get input values
+            // Получить значения из полей ввода
             const m_dot = parseFloat(document.getElementById('m_dot').value);
             const T_c = parseFloat(document.getElementById('T_c').value);
             const gamma = parseFloat(document.getElementById('gamma').value);
@@ -91,27 +94,26 @@
             const A_e = parseFloat(document.getElementById('A_e').value);
             const P_a = parseFloat(document.getElementById('P_a').value);
 
-            // Check if inputs are valid numbers
+            // Проверить, являются ли вводимые значения действительными числами
             if (isNaN(m_dot) || isNaN(T_c) || isNaN(gamma) || isNaN(M) ||
                 isNaN(P_e) || isNaN(P_c) || isNaN(A_e) || isNaN(P_a)) {
                 document.getElementById('result').textContent = 'Please enter valid values for all fields.';
                 return;
             }
 
-            // Universal gas constant (J/mol·K)
+            // Универсальная газовая постоянная (J/mol·K)
             const R = 8.314;
 
-            // Calculate exhaust velocity (v_e)
+            // Рассчитать скорость истечения (v_e)
             const v_e = Math.sqrt((2 * gamma * R * T_c) / ((gamma - 1) * M) * 
                 (1 - Math.pow(P_e / P_c, (gamma - 1) / gamma)));
 
-            // Calculate thrust
+            // Рассчитать тягу
             const thrust = m_dot * v_e + (P_e - P_a) * A_e;
 
-            // Display result
+            // Показать результат
             document.getElementById('result').textContent = `Thrust: ${thrust.toFixed(2)} N`;
         }
     </script>
 </body>
 </html>
-
