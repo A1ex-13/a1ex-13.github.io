@@ -15,9 +15,6 @@
             height: 100vh;
             margin: 0;
         }
-        .logo {
-            margin-bottom: 20px; /* Отступ снизу для логотипа */
-        }
         .calculator {
             background-color: #fff;
             padding: 20px;
@@ -49,17 +46,9 @@
             margin-top: 10px;
             font-weight: bold;
         }
-        footer {
-            margin-top: 20px; /* Отступ для футера */
-            text-align: center; /* Центрирование текста в футере */
-        }
     </style>
 </head>
 <body>
-    
-    <div class="logo">
-        <img src="https://a1ex-13.github.io/RockeetBoost/rb.png" width="250" alt="Rocket Boost Logo"/>
-    </div>
     
     <div class="calculator">
         <img src="https://a1ex-13.github.io/RockeetBoost/rb.png" width="250" alt="Rocket Boost Logo"/>
@@ -72,17 +61,13 @@
         <input type="number" id="P_c" placeholder="Chamber Pressure (Pa)" />
         <input type="number" id="A_e" placeholder="Exit Area (m²)" step="0.01" />
         <input type="number" id="P_a" placeholder="Atmospheric Pressure (Pa)" />
-        <button onclick="calculateThrust()">Calculate Thrust</button>
-        <div class="result" id="result"></div>
-    </div>
-    
-    <footer>
         <p><a href="https://a1ex-13.github.io/me/1">🧔 about me</a></p>
         <p><a href="https://a1ex-13.github.io">🚪 home</a></p>
         <p>10.14.24</p>
-        <p>Copyright by A1ex-13</p>
-    </footer>
-    
+        <button onclick="calculateThrust()">Calculate Thrust</button>
+        <div class="result" id="result"></div>
+    </div>
+     
     <script>
         function calculateThrust() {
             // Получить значения из полей ввода
