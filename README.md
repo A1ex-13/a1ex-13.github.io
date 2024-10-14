@@ -26,7 +26,7 @@ He hid deeply in his soul...
 
 [🤖🖥️BackFreeBot](https://github.com/A1ex-13/BackFreeBot)  
 
-[🚀RockeetBoost](https://a1ex-13.github.io/RockeetBoost/RockeetBoost.html)
+[🚀RockeestBoost](https://a1ex-13.github.io/RockeetBoost/RockeetBoost.html)
  
 ###### [thanks ❤️ github](https://github.com/) [🎈 OpeneDoor 19.01.2021](https://img1.goodfon.ru/original/1956x1294/e/df/kreativ-gorod-smog-chelovek.jpg)  [🐕 so to donate me fun dog](https://a1ex-13.github.io/me/DOGE.jpg)
 
