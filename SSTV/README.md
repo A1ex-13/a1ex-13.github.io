@@ -1,6 +1,8 @@
 # SSTV Encoder (JavaScript)
 
-[спасибо Sean SheepTester] (https://sheeptester.github.io) проект позволяет кодировать изображения в SSTV (Slow Scan Television) и воспроизводить звуковой сигнал в браузере.
+[спасибо Sean SheepTester](https://sheeptester.github.io) 
+
+проект позволяет кодировать изображения в SSTV (Slow Scan Television) и воспроизводить звуковой сигнал в браузере.
 
 ## 🚀 Запуск
 1. Откройте `index.html` в браузере.
@@ -13,8 +15,11 @@
 - `styles.css` – Стили (по желанию).
 
 ## 🔧 Разработка
+
 [MMSSTV](https://hamsoft.ca/pages/mmsstv.php)
+
 [Slow-scan television](https://en.wikipedia.org/wiki/Slow-scan_television)
+
 [RadioClub EIT](https://radio.clubs.etsit.upm.es/blog/2019-08-10-sstv-scottie1-encoder/)
 
 Для реализации SSTV-кодирования нужно добавить:
