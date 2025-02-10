@@ -1,4 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+#preview {
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+audio {
+  width: 100%;
 }
