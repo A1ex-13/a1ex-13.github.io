@@ -35,7 +35,7 @@ document.addEventListener('paste', e => {
   }
 });
 
-fetch('./sstv-test-image.png')
+fetch('./sstv-test-image.jpg')
   .then(r => r.blob())
   .then(loadImage);
 
