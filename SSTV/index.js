@@ -1,212 +1,133 @@
-const elems = {
-  image: document.getElementById("image"),
-  play: document.getElementById("play"),
-  stop: document.getElementById("stop"),
-  render: document.getElementById("render"),
-  preview: document.getElementById("preview"),
-  audio: document.getElementById("audio"),
-  download: document.getElementById("download"),
-};
+// Обработчик события для загрузки изображения
+document.getElementById('image').addEventListener('change', handleImageUpload);
 
-/** @type {CanvasRenderingContext2D} */
-const c = elems.preview.getContext("2d", { willReadFrequently: true });
+// Обработчик загрузки изображения
+function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
 
-const WIDTH = 320;
-const HEIGHT = 256;
+    const img = new Image();
+    const reader = new FileReader();
 
-function loadImage(file) {
-  const url = URL.createObjectURL(file);
-  image = new Image();
-  image.addEventListener("load", () => {
-    c.drawImage(image, 0, 0, WIDTH, HEIGHT);
-    URL.revokeObjectURL(url);
-  });
-  image.src = url;
+    reader.onload = function(e) {
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+
+    img.onload = function() {
+        const canvas = document.getElementById('preview');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        processImageData(imageData);
+    };
 }
 
-elems.image.addEventListener("change", () => {
-  if (elems.image.files[0]) {
-    loadImage(elems.image.files[0]);
-  }
-});
+// Обработка данных изображения и создание звуковой волны
+function processImageData(imageData) {
+    // Создаем AudioContext
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-document.addEventListener("paste", (e) => {
-  if (e.clipboardData.files[0]) {
-    loadImage(e.clipboardData.files[0]);
-  }
-});
+    // Преобразуем изображение в звуковую волну
+    const audioData = imageToSound(imageData, audioContext);
 
-fetch("./sstv-test-image.jpg")
-  .then((r) => r.blob())
-  .then(loadImage);
-
-/** @type {AudioContext} */
-let context;
-
-class Tone {
-  #oscillator;
-  #start;
-  #time;
-
-  constructor(context, delay = 0) {
-    this.#oscillator = context.createOscillator();
-    this.#oscillator.connect(context.destination);
-    this.#start = this.#time = context.currentTime + delay;
-  }
-
-  tone(frequency, duration) {
-    this.#oscillator.frequency.setValueAtTime(frequency, this.#time);
-    this.#time += duration / 1000;
-  }
-
-  mode(mode) {
-    const bits = Array.from(mode.toString(2).padStart(7, "0"), Number).reverse();
-    bits.push(bits.reduce((cum, curr) => cum ^ curr, 0));
-    for (const bit of bits) {
-      this.tone(bit ? 1100 : 1300, 30);
-    }
-    this.tone(1200, 30);
-  }
-
-  play() {
-    return new Promise((resolve) => {
-      this.#oscillator.start(this.#start);
-      this.#oscillator.stop(this.#time);
-      this.#oscillator.addEventListener("ended", () => {
-        this.#oscillator.disconnect();
-        resolve();
-      });
+    // Создаем AudioBufferSourceNode для воспроизведения звука
+    const source = audioContext.createBufferSource();
+    audioContext.decodeAudioData(audioData, (buffer) => {
+        source.buffer = buffer;
+        source.connect(audioContext.destination);
+        source.start();
     });
-  }
 
-  stop() {
-    this.#oscillator.stop();
-  }
+    // Сохраняем файл (будет использоваться для генерации звука)
+    document.getElementById('saveFile').onclick = function() {
+        saveAudioToFile(audioContext, audioData);
+    };
 }
 
-/** In seconds. */
-const DELAY = 0.1;
-const HELLO = [1900, 1500, 1900, 1500, 2300, 1500, 2300, 1500];
-/** Scottie S1. */
-const MODE = 60;
-const COLOR_LOW = 1500;
-const COLOR_HIGH = 2300;
+// Преобразование изображения в аудиофайл (пример)
+function imageToSound(imageData, audioContext) {
+    // Преобразуем каждый пиксель в звуковую волну
+    const samples = new Float32Array(imageData.width * imageData.height * 2); // Два канала для стерео
 
-function writeImageToTone(imageData, tone) {
-  for (const freq of HELLO) {
-    tone.tone(freq, 100);
-  }
-  tone.tone(1900, 300);
-  tone.tone(1200, 10);
-  tone.tone(1900, 300);
-  tone.tone(1200, 30);
-  tone.mode(MODE);
+    let index = 0;
+    for (let y = 0; y < imageData.height; y++) {
+        for (let x = 0; x < imageData.width; x++) {
+            const i = (y * imageData.width + x) * 4;
+            const r = imageData.data[i] / 255; // Красный канал
+            const g = imageData.data[i + 1] / 255; // Зеленый канал
+            const b = imageData.data[i + 2] / 255; // Синий канал
 
-  tone.tone(1200, 9);
-  for (let y = 0; y < HEIGHT; y++) {
-    const start = y * WIDTH * 4;
-    for (const channel of [1, 2, 0]) {
-      if (channel === 0) {
-        tone.tone(1200, 9);
-      }
-      tone.tone(1500, 1.5);
-      for (let x = 0; x < WIDTH; x++) {
-        const value = imageData.data[start + x * 4 + channel];
-        tone.tone(
-          COLOR_LOW + (COLOR_HIGH - COLOR_LOW) * (value / 255),
-          0.432
-        );
-      }
+            // Преобразуем цвет в звук (простой пример)
+            samples[index++] = r * 2 - 1; // Левый канал
+            samples[index++] = g * 2 - 1; // Правый канал
+        }
     }
-  }
+
+    // Создаем аудиобуфер с данными
+    const buffer = audioContext.createBuffer(2, samples.length / 2, audioContext.sampleRate);
+    buffer.getChannelData(0).set(samples.filter((_, i) => i % 2 === 0)); // Левый канал
+    buffer.getChannelData(1).set(samples.filter((_, i) => i % 2 === 1)); // Правый канал
+
+    return buffer;
 }
 
-elems.play.addEventListener("click", () => {
-  context ??= new AudioContext();
-  const tone = new Tone(context, DELAY);
-  writeImageToTone(c.getImageData(0, 0, WIDTH, HEIGHT), tone);
-
-  elems.play.disabled = true;
-  elems.stop.disabled = false;
-  tone.play().then(() => {
-    elems.play.disabled = false;
-    elems.stop.disabled = true;
-  });
-
-  elems.stop.onclick = () => tone.stop();
-});
-
-const encoder = new TextEncoder();
-function header(byteCount, sampleRate, channelCount = 1) {
-  const header = new DataView(new ArrayBuffer(44));
-  const byteView = new Uint8Array(header.buffer);
-  byteView.set(encoder.encode("RIFF"), 0);
-  header.setUint32(4, byteCount + 36, true);
-  byteView.set(encoder.encode("WAVE"), 8);
-  byteView.set(encoder.encode("fmt "), 12);
-  header.setUint32(16, 16, true);
-  header.setUint16(20, 1, true);
-  header.setUint16(22, channelCount, true);
-  header.setUint32(24, sampleRate, true);
-  header.setUint32(28, sampleRate * 4, true);
-  header.setUint16(32, channelCount * 2, true);
-  header.setUint16(34, 16, true);
-  byteView.set(encoder.encode("data"), 36);
-  header.setUint32(40, byteCount, true);
-  return header;
+// Функция для сохранения аудиофайла
+function saveAudioToFile(audioContext, audioData) {
+    const audioBuffer = audioContext.createBufferSource();
+    audioContext.decodeAudioData(audioData, (buffer) => {
+        audioBuffer.buffer = buffer;
+        const audioBlob = bufferToBlob(buffer);
+        const url = URL.createObjectURL(audioBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'sstv_audio.wav';
+        link.click();
+    });
 }
 
-elems.render.addEventListener("click", async () => {
-  elems.render.disabled = true;
-  const context = new OfflineAudioContext({
-    numberOfChannels: 1,
-    length: Math.ceil((111343.32 * 44100) / 1000),
-    sampleRate: 44100,
-  });
+// Преобразование аудиобуфера в Blob
+function bufferToBlob(buffer) {
+    const wavHeader = new ArrayBuffer(44);
+    const view = new DataView(wavHeader);
+    const audioData = buffer.getChannelData(0);
+    const dataSize = audioData.length * 2;
+    const bufferLength = dataSize + 44;
 
-  const tone = new Tone(context);
-  writeImageToTone(c.getImageData(0, 0, WIDTH, HEIGHT), tone);
-  await tone.play();
+    view.setUint8(0, 82); // 'R'
+    view.setUint8(1, 73); // 'I'
+    view.setUint8(2, 70); // 'F'
+    view.setUint8(3, 70); // 'F'
+    view.setUint32(4, bufferLength, true);
+    view.setUint8(8, 87); // 'W'
+    view.setUint8(9, 65); // 'A'
+    view.setUint8(10, 86); // 'V'
+    view.setUint8(11, 69); // 'E'
+    view.setUint8(12, 102); // 'f'
+    view.setUint8(13, 109); // 'm'
+    view.setUint8(14, 116); // 't'
+    view.setUint8(15, 32); // space
+    view.setUint32(16, 16, true); // Subchunk1Size
+    view.setUint16(20, 1, true); // AudioFormat
+    view.setUint16(22, 2, true); // NumChannels
+    view.setUint32(24, 44100, true); // SampleRate
+    view.setUint32(28, 176400, true); // ByteRate
+    view.setUint16(32, 4, true); // BlockAlign
+    view.setUint16(34, 16, true); // BitsPerSample
+    view.setUint8(36, 100); // 'd'
+    view.setUint8(37, 97); // 'a'
+    view.setUint8(38, 116); // 't'
+    view.setUint8(39, 97); // 'a'
+    view.setUint32(40, dataSize, true); // Subchunk2Size
 
-  const audioBuffer = await context.startRendering();
-  const wavData = encodeWav(audioBuffer);
-  const blob = new Blob([wavData], { type: "audio/wav" });
-  const url = URL.createObjectURL(blob);
-
-  elems.audio.innerHTML = `<audio controls src="${url}"></audio>`;
-  elems.download.href = url;
-  elems.download.download = "sstv_audio.wav";
-  elems.download.style.display = "block";
-});
-
-function encodeWav(audioBuffer) {
-  const raw = audioBuffer.getChannelData(0);
-  const buffer = new ArrayBuffer(44 + raw.length * 2);
-  const view = new DataView(buffer);
-
-  const writeString = (offset, string) => {
-    for (let i = 0; i < string.length; i++) {
-      view.setUint8(offset + i, string.charCodeAt(i));
+    const wavData = new ArrayBuffer(bufferLength);
+    const viewData = new DataView(wavData);
+    for (let i = 0; i < audioData.length; i++) {
+        viewData.setInt16(i * 2, audioData[i] * 32767, true);
     }
-  };
 
-  writeString(0, "RIFF");
-  view.setUint32(4, 36 + raw.length * 2, true);
-  writeString(8, "WAVE");
-  writeString(12, "fmt ");
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint16(22, 1, true);
-  view.setUint32(24, audioBuffer.sampleRate, true);
-  view.setUint32(28, audioBuffer.sampleRate * 2, true);
-  view.setUint16(32, 2, true);
-  view.setUint16(34, 16, true);
-  writeString(36, "data");
-  view.setUint32(40, raw.length * 2, true);
-
-  for (let i = 0, offset = 44; i < raw.length; i++, offset += 2) {
-    view.setInt16(offset, raw[i] * 32767, true);
-  }
-
-  return buffer;
+    return new Blob([wavHeader, wavData], { type: 'audio/wav' });
 }
