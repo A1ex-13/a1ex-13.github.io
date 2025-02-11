@@ -1,9 +1,81 @@
+/* Binance-style theme */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #181a20;
+  color: #eaecef;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: #f0b90b;
+  color: #181a20;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #ffcc29;
+}
+
+button:disabled {
+  background-color: #6c6f75;
+  cursor: not-allowed;
+}
+
+input[type="file"] {
+  background-color: #222429;
+  color: #f0b90b;
+  border: 1px solid #f0b90b;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: #2b2d34;
+}
+
+canvas {
+  border: 2px solid #f0b90b;
+  margin-top: 10px;
+  background-color: #222429;
+}
+
 #preview {
   image-rendering: crisp-edges;
   image-rendering: pixelated;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0b90b;
 }
 
 audio {
   width: 100%;
+  margin-top: 10px;
+}
+
+a {
+  color: #f0b90b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ffcc29;
+  text-decoration: underline;
+}
+
+p {
+  margin: 10px 0;
+}
+
+#decoded {
+  border: 2px solid #f0b90b;
+  background-color: #222429;
 }
