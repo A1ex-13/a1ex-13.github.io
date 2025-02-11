@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SSTV Encoder (Scottie S1)</title>
+    <meta name="description" content="Encode a 320x256 image into SSTV and blast it out of your speakers.">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -34,17 +35,22 @@
 
         <footer>
             <p><a href="https://a1ex-13.github.io/me/1">🧔 About Me</a></p>
+            <p><a href="https://a1ex-13.github.io/KrenSens/Kren_Tokenomics.html">💪😄🌍 Kren MEME Tokenomics</a></p>
+            <p><a href="https://a1ex-13.github.io">🚪 Home</a></p>
+            <p><a href="https://a1ex-13.github.io/SSTV/README.md"> [info]</a></p>
+            <p>2.10.25 &copy; A1ex-13</p>
         </footer>
     </div>
-    
+
+    <!-- Подключение скриптов -->
+    <script src="index.js"></script> <!-- Скрипт для обработки изображений, аудио и видео -->
+    <script type="module" src="Render.js"></script> <!-- Модуль для рендеринга звука из изображения -->
+    <script src="index_decode.js"></script> <!-- Скрипт для декодирования SSTV -->
+
     <div class="progress-container">
         <label for="progress">Processing Progress:</label>
         <progress id="progress" value="0" max="100"></progress>
     </div>
-
-    <script src="index.js"></script>
-    <script type="module" src="Render.js"></script>
-    <script src="index_decode.js"></script>
 
     <script>
         // Обработчик события для загрузки изображения
