@@ -1,0 +1,94 @@
+/* Binance-style theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181a20;
+    color: #eaecef;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #222429;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 204, 41, 0.3);
+}
+
+h1 {
+    color: #f0b90b;
+}
+
+.upload-section {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="file"] {
+    background-color: #222429;
+    color: #f0b90b;
+    border: 1px solid #f0b90b;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    background-color: #2b2d34;
+}
+
+.buttons button {
+    background-color: #f0b90b;
+    color: #181a20;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #ffcc29;
+}
+
+.buttons button:disabled {
+    background-color: #6c6f75;
+    cursor: not-allowed;
+}
+
+canvas {
+    border: 2px solid #f0b90b;
+    margin-top: 10px;
+    background-color: #222429;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+footer a {
+    color: #f0b90b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffcc29;
+}
