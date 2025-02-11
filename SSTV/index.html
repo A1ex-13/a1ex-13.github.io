@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SSTV Encoder (Scottie S1)</title>
+    <meta name="description" content="Encode a 320x256 image into SSTV and blast it out of your speakers.">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SSTV Encoder (Scottie S1)</h1>
+        
+        <div class="upload-section">
+            <label for="image">Select an image:</label>
+            <input type="file" id="image" accept="image/*">
+            <p>Image will be resized to 320x256.</p>
+
+            <label for="audioFile">Select an audio:</label>
+            <input type="file" id="audioFile" accept="audio/*">
+        </div>
+
+        <div class="buttons">
+            <button id="play">Play</button>
+            <button id="stop" disabled>Stop</button>
+            <button id="render">Render</button>
+            <button id="decode">Decode SSTV</button>
+            <button id="saveFile">Save Audio File</button>
+        </div>
+
+        <canvas id="preview" width="320" height="256"></canvas>
+        <canvas id="decoded" width="320" height="256"></canvas>
+
+        <audio id="audioPlayer" controls></audio>
+
+        <footer>
+            <p><a href="https://a1ex-13.github.io/me/1">🧔 About Me</a></p>
+            <p><a href="https://a1ex-13.github.io/KrenSens/Kren_Tokenomics.html">💪😄🌍 Kren MEME Tokenomics</a></p>
+            <p><a href="https://a1ex-13.github.io">🚪 Home</a></p>
+            <p><a href="https://a1ex-13.github.io/SSTV/README.md"> [info]</a></p>
+            <p>2.10.25 &copy; A1ex-13</p>
+        </footer>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="index.js"></script> <!-- Скрипт для обработки изображений, аудио и видео -->
+    <script type="module" src="Render.js"></script> <!-- Модуль для рендеринга звука из изображения -->
+    <script src="index_decode.js"></script> <!-- Скрипт для декодирования SSTV -->
+
+    <script>
+        // Обработчик события для загрузки изображения
+        document.getElementById('image').addEventListener('change', handleImageUpload);
+
+        // Обработчик загрузки изображения
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const img = new Image();
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+
+            img.onload = function() {
+                const canvas = document.getElementById('preview');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                processImageData(imageData);
+            };
+        }
+
+        // Обработка данных изображения и создание звуковой волны
+        function processImageData(imageData) {
+            // Создаем AudioContext
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Создаем экземпляр Tone
+            const tone = new Tone(audioContext);
+
+            // Преобразуем изображение в звуковую волну
+            writeImageToTone(imageData, tone);
+
+            // По умолчанию сохраняем файл
+            document.getElementById('saveFile').onclick = function() {
+                tone.saveToFile();
+            };
+        }
+    </script>
+</body>
+</html>
