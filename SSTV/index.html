@@ -89,9 +89,10 @@
 
             // По умолчанию сохраняем файл
             document.getElementById('saveFile').onclick = function() {
-                tone.saveToFile();
+                tone.saveToFile(audioContext);
             };
         }
     </script>
 </body>
 </html>
+
