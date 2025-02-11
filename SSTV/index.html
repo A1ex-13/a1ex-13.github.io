@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SSTV encoder (Scottie S1)</title>
-    <meta
-      name="description"
-      content="Encode a 320 by 256 image into SSTV and blast it out of your speakers."
-    />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <p>
-      <label>
-        Select an image:
-        <input type="file" id="image" accept="image/*" autofocus />
-        (or paste an image here).
-      </label>
-      Your image will be forcefully stretched to 320 by 256 pixels.
-    </p>
-    <button id="play">Play</button>
-    <button id="stop" disabled>Stop</button>
-    <button id="render">Render</button>
-    <p><canvas id="preview" width="320" height="256"></canvas></p>
-    <div id="audio"></div>
-    <p>
-    </p>
-    <p><a href="https://a1ex-13.github.io/me/1">🧔 about me</a></p>
-    <p><a href="https://a1ex-13.github.io/KrenSens/Kren_Tokenomics.html">💪😄🌍Kren_MEME_Tokenomics</a></p>
-    <p><a href="https://a1ex-13.github.io">🚪 home</a></p>
-    <p><a href="https://sheeptester.github.io"> [thanks ❤️ SheepTester]</a></p>
-    <p align="center">2.10.25</p>
-    <p align="center">Copyright by A1ex-13</p>
-    <script src="index.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SSTV Encoder (Scottie S1)</title>
+    <meta name="description" content="Encode a 320x256 image into SSTV and blast it out of your speakers.">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SSTV Encoder (Scottie S1)</h1>
+        
+        <div class="upload-section">
+            <label for="image">Select an image:</label>
+            <input type="file" id="image" accept="image/*">
+            <p>Image will be resized to 320x256.</p>
+
+            <label for="audioFile">Select an audio:</label>
+            <input type="file" id="audioFile" accept="audio/*">
+        </div>
+
+        <div class="buttons">
+            <button id="play">Play</button>
+            <button id="stop" disabled>Stop</button>
+
+        </div>
+
+        <canvas id="preview" width="320" height="256"></canvas>
+
+
+        <audio id="audioPlayer" controls></audio>
+
+        <footer>
+            <p><a href="https://a1ex-13.github.io/me/1">🧔 About Me</a></p>
+            <p><a href="https://a1ex-13.github.io/KrenSens/Kren_Tokenomics.html">💪😄🌍 Kren MEME Tokenomics</a></p>
+            <p><a href="https://a1ex-13.github.io">🚪 Home</a></p>
+            <p><a href="https://a1ex-13.github.io/SSTV/README.md"> [info]</a></p>
+            <p>2.10.25 &copy; A1ex-13</p>
+        </footer>
+    </div>
+
+    <!-- Подключение скриптов -->
+    <script src="index.js"></script> <!-- Скрипт для обработки изображений, аудио и видео -->
+
+</body>
 </html>
 
