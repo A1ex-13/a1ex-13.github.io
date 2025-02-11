@@ -17,12 +17,20 @@
         <input type="file" id="image" accept="image/*" autofocus />
         (or paste an image here).
       </label>
+       <label>
+        Select an audio:
+        <input type="file" id="audioFile" accept="audio/*"autofocus />
+        (or paste an image here).
+      </label>
       Your image will be forcefully stretched to 320 by 256 pixels.
     </p>
     <button id="play">Play</button>
     <button id="stop" disabled>Stop</button>
     <button id="render">Render</button>
     <p><canvas id="preview" width="320" height="256"></canvas></p>
+    <input type="file" id="audioFile" accept="audio/*">
+    <button id="decode">Декодировать SSTV</button>
+    <canvas id="decoded" width="320" height="256"></canvas>
     <div id="audio"></div>
     <p>
     </p>
